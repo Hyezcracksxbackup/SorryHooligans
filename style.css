@@ -1,0 +1,32 @@
+body {
+  background-color: #121212;
+  color: #f44336;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.note {
+  background-color: #1e1e1e;
+  border: 2px solid #f44336;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 600px;
+  box-shadow: 0 0 20px red;
+  line-height: 1.6em;
+}
+
+.note h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+}
